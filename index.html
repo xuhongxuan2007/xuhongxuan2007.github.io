@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -404,7 +404,7 @@ footer a:hover{color:var(--brand2)}
    ============================================================ */
 
 // 1) 你的 GitHub 用户名（部署到 GitHub Pages 后，网址是 https://用户名.github.io）
-const GITHUB_USERNAME = "YOUR_GITHUB_USERNAME";   // ← 注册完 GitHub 后把这里换掉
+const GITHUB_USERNAME = "xuhongxuan2007";   // ← 你的 GitHub 用户名
 
 // 2) 展示名字
 const NAME = "徐弘轩";
@@ -436,14 +436,14 @@ const PROJECTS = [
     title:"猜数字小游戏",
     desc:"用 Python 写的命令行小游戏：电脑随机想一个 1–100 的数字，玩家来猜，程序提示「大了 / 小了」，直到猜中并统计猜测次数。单文件实现，含输入校验。",
     tags:["Python","命令行","单文件"],
-    repo:"https://github.com/" + "YOUR_GITHUB_USERNAME" + "/first"   // ← 换成你真实的仓库地址
+    repo:"https://github.com/" + "xuhongxuan2007" + "/first"   // ← 换成你真实的仓库地址
   },
   {
     emoji:"🌐",
     title:"静态个人主页",
     desc:"就是你正在看的这个页面。单文件 HTML，纯手写 CSS 动画与 JavaScript 交互，使用响应式布局，通过 GitHub Pages 部署到公网。",
     tags:["HTML","CSS","JavaScript","GitHub Pages"],
-    repo:"https://github.com/" + "YOUR_GITHUB_USERNAME" + "/" + "YOUR_GITHUB_USERNAME" + ".github.io"
+    repo:"https://github.com/" + "xuhongxuan2007" + "/" + "xuhongxuan2007" + ".github.io"
   }
 ];
 
@@ -488,8 +488,10 @@ document.getElementById('projectsGrid').innerHTML = PROJECTS.map(p => `
 `).join('');
 
 // ---- 渲染联系方式 ----
+// GITHUB_USERNAME 若仍是初始占位值（以 YOUR_ 开头），说明还没填，显示"待填写"
+const GH_UNSET = GITHUB_USERNAME.startsWith('YOUR_');
 document.getElementById('contactGrid').innerHTML = CONTACTS.map(c => {
-  const value = c.value.includes('YOUR_GITHUB_USERNAME') ? '待填写' : c.value;
+  const value = (GH_UNSET && c.value.includes('YOUR_')) ? '待填写' : c.value;
   const inner = `
     <div class="ico">${c.icon}</div>
     <div><div class="k">${c.key}</div><div class="v">${value}</div></div>`;
@@ -508,9 +510,8 @@ document.getElementById('heroGithub').href = "https://github.com/" + GITHUB_USER
 document.getElementById('footGithub').href = "https://github.com/" + GITHUB_USERNAME;
 document.title = NAME + " 的个人主页";
 
-// GitHub 用户名还没替换时，给个明显提示，避免交上去还带着占位符
-const GH_READY = GITHUB_USERNAME !== "YOUR_GITHUB_USERNAME";
-if (!GH_READY) {
+// GitHub 用户名还没填时，给个明显提示，避免交上去还带着占位符
+if (GH_UNSET) {
   const hint = document.querySelector('.badge span:last-child');
   if (hint) hint.textContent = "⚠ 待办：请在配置区填入 GitHub 用户名";
   document.getElementById('heroGithub').textContent = "GitHub（待填写）";
