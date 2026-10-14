@@ -96,6 +96,36 @@ git push -u origin main
 
 本目录下的 `.nojekyll` 是空文件，作用是告诉 GitHub Pages **跳过 Jekyll 处理**，避免以 `_` 或 `.` 开头的文件被忽略。
 
+### 推送失败：连接超时怎么办
+
+如果 `git push` 卡住然后报 `Failed to connect to github.com port 443 ... Timed out`，
+是网络访问 GitHub 受限，而不是命令写错了。
+
+先确认代理已经开着，然后让 git 也走代理（浏览器通不代表 git 通，这是两套配置）：
+
+```bash
+# 把 7890 换成你代理软件的实际端口（Clash 常见 7890，v2rayN 常见 10809）
+git config --global http.proxy  http://127.0.0.1:7890
+git config --global https.proxy http://127.0.0.1:7890
+```
+
+推送完成后建议取消，避免以后在无代理环境下 git 一直报连不上代理：
+
+```bash
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
+验证 GitHub 是否可达：
+
+```powershell
+# Windows 自带的 curl
+curl.exe -I https://github.com
+
+# 或者用 PowerShell 原生命令
+Invoke-WebRequest 'https://github.com' -UseBasicParsing -TimeoutSec 20 | Select-Object StatusCode
+```
+
 ## 七、目录结构
 
 ```text
