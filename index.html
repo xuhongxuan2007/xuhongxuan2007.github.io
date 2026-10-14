@@ -309,7 +309,7 @@ footer a:hover{color:var(--brand2)}
     <div>
       <div class="badge"><span class="dot"></span><span>目前开放交流 / 学习中</span></div>
       <h1>
-        你好，我是 <span class="grad" id="heroName">你的名字</span>
+        你好，我是 <span class="grad" id="heroName">徐弘轩</span>
       </h1>
       <p class="typing-line"><span id="typed"></span><span class="cursor"></span></p>
       <div class="hero-btns">
@@ -335,24 +335,27 @@ footer a:hover{color:var(--brand2)}
   <div class="about-grid">
     <div class="card about-text reveal">
       <p>
-        我是 <span class="todo" title="请替换成你的真实姓名">你的名字</span>，
-        目前就读于 <span class="todo" title="请替换成你的学校">你的学校</span>
-        的 <span class="todo" title="请替换成你的专业">你的专业</span>。
+        我是 <strong>徐弘轩</strong>，目前就读于 <strong>沈阳理工大学</strong>
+        计算机科学与技术专业，大二。
       </p>
       <p>
-        我对编程和技术很感兴趣，正在系统学习
-        <strong>Python</strong> 和 <strong>C / C++</strong>，
-        也在尝试用 AI 工具辅助开发，把想法更快地变成能跑起来的东西。
+        说实话，我是被录进这个专业之后才开始真正接触编程的——起点不算早，也谈不上什么天赋型选手。
+        但学着学着发现，能让一段代码跑起来、能亲手把一个想法变成看得见的东西，这件事本身就挺让人上瘾的。
+        既然已经在这条路上了，那我就打算全心把它学好。
       </p>
       <p>
-        <span class="todo" title="这一段请用你自己的话写 2-3 句：你为什么开始学编程、最近在折腾什么、想做成什么">这里写两三句你自己的话：为什么开始学编程、最近在折腾什么、想做成什么。</span>
+        目前我在系统补 <strong>Python</strong> 和 <strong>C / C++</strong> 的基础，
+        也在用 <strong>Arduino</strong> 和 <strong>Keil5</strong> 碰一碰单片机，
+        同时习惯借助 AI 工具边做边学，把不懂的地方一个个啃下来。
+        接下来最想做的事，是真正参与进项目里，用实战检验自己到底学到了多少。
       </p>
     </div>
     <div class="facts reveal">
-      <div class="fact"><div class="ico">🎓</div><div><div class="k">学校 / 专业</div><div class="v"><span class="todo">待填写</span></div></div></div>
-      <div class="fact"><div class="ico">📍</div><div><div class="k">所在城市</div><div class="v"><span class="todo">待填写</span></div></div></div>
-      <div class="fact"><div class="ico">💻</div><div><div class="k">主力语言</div><div class="v">Python · C / C++</div></div></div>
-      <div class="fact"><div class="ico">🎯</div><div><div class="k">当前目标</div><div class="v"><span class="todo">待填写</span></div></div></div>
+      <div class="fact"><div class="ico">🎓</div><div><div class="k">学校 / 专业</div><div class="v">沈阳理工大学 · 计算机科学与技术</div></div></div>
+      <div class="fact"><div class="ico">📚</div><div><div class="k">年级</div><div class="v">大二</div></div></div>
+      <div class="fact"><div class="ico">📍</div><div><div class="k">所在城市</div><div class="v">辽宁 · 沈阳</div></div></div>
+      <div class="fact"><div class="ico">💻</div><div><div class="k">主力方向</div><div class="v">Python · C / C++ · 单片机</div></div></div>
+      <div class="fact"><div class="ico">🎯</div><div><div class="k">当前目标</div><div class="v">参与实际项目，锻炼工程能力，争取拿下奖项</div></div></div>
     </div>
   </div>
 </section>
@@ -404,26 +407,26 @@ footer a:hover{color:var(--brand2)}
 const GITHUB_USERNAME = "YOUR_GITHUB_USERNAME";   // ← 注册完 GitHub 后把这里换掉
 
 // 2) 展示名字
-const NAME = "你的名字";          // ← 换成你的真实姓名或昵称
-const LOGO_TEXT = "我的主页";      // ← 导航栏左边的小字
-const AVATAR_TEXT = "我";          // ← 圆形头像里的字符，可以是一个汉字或你的英文缩写
+const NAME = "徐弘轩";
+const LOGO_TEXT = "徐弘轩";        // ← 导航栏左边的小字
+const AVATAR_TEXT = "徐";          // ← 圆形头像里的字符
 
 // 3) 首屏打字的几句话
 const TYPING_LINES = [
-  "一名正在学习编程的学生",
+  "沈阳理工大学 · 计算机科学与技术",
   "Python / C++ 学习者",
-  "喜欢用 AI 工具把想法变成现实",
+  "正在把课本知识变成能跑起来的项目",
   "欢迎来到我的个人主页 ✨"
 ];
 
-// 4) 技能（level 满分 100，请照实填，不要虚标）
+// 4) 技能（level 满分 100，照实标注，不虚标）
 const SKILLS = [
-  { name:"Python",      level:75, tags:["基础语法","面向对象","第三方库"] },
-  { name:"C / C++",     level:60, tags:["语法基础","指针","算法练习"] },
-  { name:"HTML / CSS",  level:65, tags:["语义化标签","Flex/Grid","响应式"] },
-  { name:"JavaScript",  level:50, tags:["DOM 操作","事件","ES6 基础"] },
-  { name:"Git / GitHub",level:55, tags:["commit","push","Pages 部署"] },
-  { name:"AI 工具使用",  level:80, tags:["提示词","代码辅助","调试问答"] }
+  { name:"Python",       level:60, tags:["基础语法","面向对象","第三方库"] },
+  { name:"C / C++",      level:55, tags:["语法基础","流程控制","函数"] },
+  { name:"单片机开发",    level:45, tags:["Arduino","Keil5","C51 / STM32","串口调试"] },
+  { name:"HTML / CSS",   level:45, tags:["语义化标签","Flex 布局","响应式"] },
+  { name:"Git / GitHub", level:40, tags:["commit","push","Pages 部署"] },
+  { name:"AI 工具协作",   level:75, tags:["提示词","代码生成","调试答疑"] }
 ];
 
 // 5) 项目作品
@@ -446,10 +449,11 @@ const PROJECTS = [
 
 // 6) 联系方式（只填你愿意公开的）
 const CONTACTS = [
-  { icon:"📧", key:"Email",    value:"你的邮箱@example.com", href:"mailto:你的邮箱@example.com" },
-  { icon:"🐙", key:"GitHub",   value:"@" + GITHUB_USERNAME,  href:"https://github.com/" + GITHUB_USERNAME },
-  { icon:"💬", key:"微信",      value:"你的微信号",           href:null },
-  { icon:"📝", key:"博客 / 其他", value:"待填写",             href:null }
+  { icon:"📧", key:"Email",  value:"3174059116@qq.com", href:"mailto:3174059116@qq.com" },
+  { icon:"🐙", key:"GitHub", value:"@" + GITHUB_USERNAME, href:"https://github.com/" + GITHUB_USERNAME },
+  { icon:"💬", key:"QQ",     value:"3174059116", href:null }
+  // 想公开手机号的话，取消下面这行的注释即可（注：公开手机号可能被爬虫抓取，招来骚扰电话/短信）
+  // ,{ icon:"📱", key:"电话", value:"15002499753", href:"tel:15002499753" }
 ];
 
 /* ============================================================
@@ -485,9 +489,10 @@ document.getElementById('projectsGrid').innerHTML = PROJECTS.map(p => `
 
 // ---- 渲染联系方式 ----
 document.getElementById('contactGrid').innerHTML = CONTACTS.map(c => {
+  const value = c.value.includes('YOUR_GITHUB_USERNAME') ? '待填写' : c.value;
   const inner = `
     <div class="ico">${c.icon}</div>
-    <div><div class="k">${c.key}</div><div class="v">${c.value}</div></div>`;
+    <div><div class="k">${c.key}</div><div class="v">${value}</div></div>`;
   return c.href
     ? `<a class="contact-item" href="${c.href}" target="_blank" rel="noopener">${inner}</a>`
     : `<div class="contact-item">${inner}</div>`;
@@ -502,6 +507,14 @@ document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('heroGithub').href = "https://github.com/" + GITHUB_USERNAME;
 document.getElementById('footGithub').href = "https://github.com/" + GITHUB_USERNAME;
 document.title = NAME + " 的个人主页";
+
+// GitHub 用户名还没替换时，给个明显提示，避免交上去还带着占位符
+const GH_READY = GITHUB_USERNAME !== "YOUR_GITHUB_USERNAME";
+if (!GH_READY) {
+  const hint = document.querySelector('.badge span:last-child');
+  if (hint) hint.textContent = "⚠ 待办：请在配置区填入 GitHub 用户名";
+  document.getElementById('heroGithub').textContent = "GitHub（待填写）";
+}
 
 // ---- 首屏打字机效果 ----
 (function typewriter(){
