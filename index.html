@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>我的个人主页</title>
-<meta name="description" content="个人主页 · 技能 · 项目作品 · 联系方式">
+<title>徐弘轩 的个人主页</title>
+<meta name="description" content="徐弘轩的个人主页 —— 沈阳理工大学计算机科学与技术专业，技能栈、项目作品与联系方式">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 <style>
 /* ===================== 基础变量与重置 ===================== */
@@ -183,7 +183,7 @@ section{max-width:var(--maxw);margin:0 auto;padding:104px 24px}
 .fact .ico{font-size:1.25rem;width:38px;height:38px;display:grid;place-items:center;border-radius:10px;background:rgba(77,141,255,.12);flex-shrink:0}
 .fact .k{font-size:.76rem;color:var(--text-faint);letter-spacing:.6px;text-transform:uppercase}
 .fact .v{font-size:.94rem;font-weight:600}
-/* 待填写高亮 */
+/* 占位内容提示样式（配置完成后页面上不会出现） */
 .todo{
   color:#ffd166;border-bottom:1px dashed rgba(255,209,102,.55);
   cursor:help;font-weight:600;
@@ -291,7 +291,7 @@ footer a:hover{color:var(--brand2)}
 <!-- 导航 -->
 <header id="header">
   <nav class="nav">
-    <div class="logo"><span class="dot"></span><span id="navName">我的主页</span></div>
+    <div class="logo"><span class="dot"></span><span id="navName">徐弘轩</span></div>
     <div class="nav-links">
       <a href="#about">关于我</a>
       <a href="#skills">技能栈</a>
@@ -392,7 +392,7 @@ footer a:hover{color:var(--brand2)}
 </main>
 
 <footer>
-  <p>© <span id="year"></span> <span id="footName">你的名字</span> · 用 HTML / CSS / JavaScript 手写构建</p>
+  <p>© <span id="year"></span> <span id="footName">徐弘轩</span> · 用 HTML / CSS / JavaScript 手写构建</p>
   <p style="margin-top:6px"><a id="footGithub" href="#" target="_blank" rel="noopener">GitHub</a></p>
 </footer>
 
@@ -488,10 +488,10 @@ document.getElementById('projectsGrid').innerHTML = PROJECTS.map(p => `
 `).join('');
 
 // ---- 渲染联系方式 ----
-// GITHUB_USERNAME 若仍是初始占位值（以 YOUR_ 开头），说明还没填，显示"待填写"
+// 若 GITHUB_USERNAME 还是以 YOUR_ 开头的占位值（即尚未配置），显示提示文字而不是无效链接
 const GH_UNSET = GITHUB_USERNAME.startsWith('YOUR_');
 document.getElementById('contactGrid').innerHTML = CONTACTS.map(c => {
-  const value = (GH_UNSET && c.value.includes('YOUR_')) ? '待填写' : c.value;
+  const value = (GH_UNSET && c.value.includes('YOUR_')) ? '未配置' : c.value;
   const inner = `
     <div class="ico">${c.icon}</div>
     <div><div class="k">${c.key}</div><div class="v">${value}</div></div>`;
@@ -514,7 +514,7 @@ document.title = NAME + " 的个人主页";
 if (GH_UNSET) {
   const hint = document.querySelector('.badge span:last-child');
   if (hint) hint.textContent = "⚠ 待办：请在配置区填入 GitHub 用户名";
-  document.getElementById('heroGithub').textContent = "GitHub（待填写）";
+  document.getElementById('heroGithub').textContent = "GitHub（未配置）";
 }
 
 // ---- 首屏打字机效果 ----
